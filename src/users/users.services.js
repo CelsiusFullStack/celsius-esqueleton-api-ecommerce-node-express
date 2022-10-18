@@ -120,17 +120,11 @@ const deleteMyUser = (req , res) => {
 const patchMyUser = (req, res) => {
   const id = req.user.id;
   const { firstName, lastName, phone, gender, country } = req.body;
-  usersControllers
-    .updateUser(id, { firstName, lastName, phone, gender, country })
-    .then((data) => {
-      if (data[0]) {
-        res
-          .status(200)
-          .json({ message: `User with ID: ${id}, edited succesfully!` });
-      } else {
-        res.status(404).json({ message: "Invalid ID" });
-      }
-    })
+  usersControllers.updateUser(id, { firstName, lastName, phone, gender, birthday, country })
+    .then(data => {
+          res.status(200)
+          .json({ message: `User with ID: ${id}, edited succesfully!` })
+    } )
     .catch((err) => {
       res.status(400).json({ message: err.message });
     });

@@ -13,7 +13,7 @@
 - Herramienta para publicar imagenes de perfil
 - CRUD de usuarios con autenticacion y manejo de permisos
 - /users/:id DELETE, PUT
-- /users/me
+- /users/me Delete and Pacth 
 
 Orden
 1. app.js
